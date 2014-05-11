@@ -317,7 +317,7 @@ public class TagViewer extends ActionBarActivity {
         		startActivity(a);
         	}else{
         		//Save
-        		Toast.makeText(getApplicationContext(),"Inside",Toast.LENGTH_LONG).show();
+        		//Toast.makeText(getApplicationContext(),"Inside",Toast.LENGTH_LONG).show();
         		ParseQuery<ParseObject> query = ParseQuery.getQuery("people");
     			query.whereEqualTo("tagid",uid);
     			query.findInBackground(new FindCallback<ParseObject>() {

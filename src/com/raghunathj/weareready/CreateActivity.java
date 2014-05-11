@@ -17,8 +17,8 @@ import android.widget.Spinner;
 
 public class CreateActivity extends ActionBarActivity implements OnClickListener {
 	
-	EditText firstName,lastName,age,phone,emergencyName,emergencyNumber,city;
-	Spinner gender;
+	EditText firstName,lastName,age,phone,emergencyName,emergencyNumber,city,peoplecount;
+	Spinner gender,bloodgroup;
 	Button create;
 	String tagid = null;
 	Bundle extras = null;
@@ -41,9 +41,11 @@ public class CreateActivity extends ActionBarActivity implements OnClickListener
 		phone = (EditText) findViewById(R.id.etPhone);
 		emergencyName = (EditText) findViewById(R.id.etEmergencyName);
 		emergencyNumber = (EditText) findViewById(R.id.etEmergencyPhone);
+		peoplecount = (EditText) findViewById(R.id.etGroup);
 		city = (EditText) findViewById(R.id.etCity);
 		create = (Button) findViewById(R.id.bCreate);
 		gender = (Spinner) findViewById(R.id.sGender);
+		bloodgroup = (Spinner) findViewById(R.id.sBloodGroup);
 		create.setOnClickListener(this);
 		
 	}
@@ -62,6 +64,8 @@ public class CreateActivity extends ActionBarActivity implements OnClickListener
 			o.put("emergencyPhone",emergencyNumber.getText().toString());
 			o.put("city",city.getText().toString());
 			o.put("gender",gender.getSelectedItem());
+			o.put("bloodgroup",bloodgroup.getSelectedItem());
+			o.put("groupcount",peoplecount.getText().toString());
 			startLoading();
 			o.saveInBackground(new SaveCallback() {
 				

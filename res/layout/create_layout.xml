@@ -43,6 +43,22 @@
         android:layout_height="wrap_content"
         android:ems="10" />
 
+    <Spinner
+        android:id="@+id/sBloodGroup"
+        android:entries="@array/bloodgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/etGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="People accompaning"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
     <EditText
         android:hint="Emergency Name"
         android:id="@+id/etEmergencyName"
