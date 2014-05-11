@@ -1,7 +1,11 @@
 package com.raghunathj.weareready;
 
+import com.parse.ParseException;
 import com.parse.ParseObject;
+import com.parse.SaveCallback;
 
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -18,6 +22,7 @@ public class CreateActivity extends ActionBarActivity implements OnClickListener
 	Button create;
 	String tagid = null;
 	Bundle extras = null;
+	protected ProgressDialog proDialog;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +31,10 @@ public class CreateActivity extends ActionBarActivity implements OnClickListener
 		setContentView(R.layout.create_layout);
 		final ActionBar bar = getSupportActionBar();
 		bar.setTitle("Create User");
-		
+		extras = getIntent().getExtras();
+		if(extras != null){
+			tagid = extras.getString("tagid");
+		}
 		firstName = (EditText) findViewById(R.id.etFirstName);
 		lastName = (EditText) findViewById(R.id.etLastName);
 		age = (EditText) findViewById(R.id.etAge);
@@ -35,6 +43,7 @@ public class CreateActivity extends ActionBarActivity implements OnClickListener
 		emergencyNumber = (EditText) findViewById(R.id.etEmergencyPhone);
 		city = (EditText) findViewById(R.id.etCity);
 		create = (Button) findViewById(R.id.bCreate);
+		gender = (Spinner) findViewById(R.id.sGender);
 		create.setOnClickListener(this);
 		
 	}
@@ -52,8 +61,32 @@ public class CreateActivity extends ActionBarActivity implements OnClickListener
 			o.put("emergencyName",emergencyName.getText().toString());
 			o.put("emergencyPhone",emergencyNumber.getText().toString());
 			o.put("city",city.getText().toString());
+			o.put("gender",gender.getSelectedItem());
+			startLoading();
+			o.saveInBackground(new SaveCallback() {
+				
+				@Override
+				public void done(ParseException e) {
+					stopLoading();
+					Intent i = new Intent(CreateActivity.this,HomeActivity.class);
+					startActivity(i);
+				}
+			});
 			break;
 		}
+	}
+	
+	protected void startLoading() {
+	    proDialog = new ProgressDialog(this);
+	    proDialog.setMessage("Logging In...");
+	    proDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+	    proDialog.setCancelable(false);
+	    proDialog.show();
+	}
+
+	protected void stopLoading() {
+	    proDialog.dismiss();
+	    proDialog = null;
 	}
 
 	
