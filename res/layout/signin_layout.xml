@@ -32,6 +32,7 @@
     <Spinner
         android:id="@+id/sCheckpoint"
         android:layout_width="match_parent"
+        android:entries="@array/checkpoint"
         android:layout_height="wrap_content" />
 
     <Switch

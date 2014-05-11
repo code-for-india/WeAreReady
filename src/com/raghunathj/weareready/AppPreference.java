@@ -23,5 +23,16 @@ public class AppPreference {
     	}
     	return null;
     }
+    
+    public String getCheckpoint(){
+    	return _sharedPrefs.getString("checkpoint","");
+    }
+    
+    public void setCheckpoint(String point){
+    	if(!point.equals("")){
+    		_prefsEditor.putString("checkpoint", point);
+        	_prefsEditor.commit();
+    	}
+    }
 
 }

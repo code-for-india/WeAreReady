@@ -4,6 +4,7 @@ int anim abc_slide_in_bottom 0x7f040002
 int anim abc_slide_in_top 0x7f040003
 int anim abc_slide_out_bottom 0x7f040004
 int anim abc_slide_out_top 0x7f040005
+int array checkpoint 0x7f0d0002
 int array gender 0x7f0d0001
 int array roles 0x7f0d0000
 int attr actionBarDivider 0x7f01000b

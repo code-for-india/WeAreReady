@@ -14,12 +14,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class SignInActivity extends ActionBarActivity implements OnClickListener {
 
 	Button bSignIn;
 	EditText username,password;
+	Spinner checkpoint;
 	
 	private AppPreference _config;
 	
@@ -41,6 +43,8 @@ public class SignInActivity extends ActionBarActivity implements OnClickListener
 		bSignIn = (Button) findViewById(R.id.bSignIn);
 		bSignIn.setOnClickListener(this);
 		
+		checkpoint = (Spinner) findViewById(R.id.sCheckpoint);
+		
 		username = (EditText) findViewById(R.id.etUserName);
 		password = (EditText) findViewById(R.id.etPassword);
 	}
@@ -57,6 +61,7 @@ public class SignInActivity extends ActionBarActivity implements OnClickListener
 				public void done(ParseUser user, ParseException e) {
 					if(user!= null){
 						//User is available
+						_config.setCheckpoint(checkpoint.getSelectedItem().toString());
 						Intent i = new Intent(SignInActivity.this,HomeActivity.class);
 						startActivity(i);
 						//Toast.makeText(getApplicationContext(),"Logged In",Toast.LENGTH_LONG).show();

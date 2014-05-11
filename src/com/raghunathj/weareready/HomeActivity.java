@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class HomeActivity extends ActionBarActivity implements OnClickListener {
 	
@@ -27,6 +28,8 @@ public class HomeActivity extends ActionBarActivity implements OnClickListener {
 		scan = (Button) findViewById(R.id.bScan);
 		
 		create.setVisibility(View.INVISIBLE);
+		
+		//Toast.makeText(getApplicationContext(),_config.getCheckpoint(),Toast.LENGTH_LONG).show();
 		
 		String role = ParseUser.getCurrentUser().get("role").toString();
 		if(role.equals("Administrator")){

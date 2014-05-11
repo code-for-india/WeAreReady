@@ -23,6 +23,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import com.parse.FindCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
 import com.raghunathj.weareready.record.ParsedNdefRecord;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -57,6 +63,8 @@ public class TagViewer extends ActionBarActivity {
     private NfcAdapter mAdapter;
     private PendingIntent mPendingIntent;
     private NdefMessage mNdefPushMessage;
+    
+    private AppPreference _config;
 
     private AlertDialog mDialog;
     
@@ -74,6 +82,10 @@ public class TagViewer extends ActionBarActivity {
         resolveIntent(getIntent());
         
         extras = getIntent().getExtras();
+        
+        _config = new AppPreference(this);
+		String[] parseKeys = _config.getAppKeys("parse");
+		Parse.initialize(this,parseKeys[0],parseKeys[1]);
 
         mDialog = new AlertDialog.Builder(this).setNeutralButton("Ok", null).create();
 
@@ -304,7 +316,32 @@ public class TagViewer extends ActionBarActivity {
         		a.putExtras(g);
         		startActivity(a);
         	}else{
-        		
+        		//Save
+        		Toast.makeText(getApplicationContext(),"Inside",Toast.LENGTH_LONG).show();
+        		ParseQuery<ParseObject> query = ParseQuery.getQuery("people");
+    			query.whereEqualTo("tagid",uid);
+    			query.findInBackground(new FindCallback<ParseObject>() {
+					
+					@Override
+					public void done(List<ParseObject> objects, ParseException e) {
+						if(e == null){
+							for(ParseObject obj : objects){
+								ParseObject o = new ParseObject("peoplelog");
+								o.put("tagid",obj.get("tagid"));
+								o.put("checkpoint",_config.getCheckpoint());
+								o.saveInBackground();
+								Toast.makeText(getApplicationContext(),"Details have been Updated",Toast.LENGTH_LONG).show();
+								Intent b = new Intent(TagViewer.this,HomeActivity.class);
+				        		startActivity(b);
+				        		
+							}
+						}else{
+							Toast.makeText(getApplicationContext(),"User Info Not Found",Toast.LENGTH_LONG).show();
+							Intent c = new Intent(TagViewer.this,HomeActivity.class);
+			        		startActivity(c);
+						}
+					}
+				});
         	}
         }
         /*final int size = records.size();

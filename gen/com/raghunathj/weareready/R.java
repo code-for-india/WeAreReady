@@ -17,6 +17,7 @@ public final class R {
         public static final int abc_slide_out_top=0x7f040005;
     }
     public static final class array {
+        public static final int checkpoint=0x7f0d0002;
         public static final int gender=0x7f0d0001;
         public static final int roles=0x7f0d0000;
     }
