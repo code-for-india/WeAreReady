@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="lib" path="repo/org/apache/cordova/cordova/3.3.0/cordova-3.3.0.jar"/>
+	<classpathentry exported="true" kind="lib" path="repo/org/apache/cordova/cordova-core/3.3/cordova-core-3.3.jar"/>
+	<classpathentry exported="true" kind="lib" path="repo/com/google/android/gcm/gcm/r3/gcm-r3.jar"/>
+		<classpathentry exported="true" kind="lib" path="repo/com/google/analytics/2.3.1/analytics-2.3.1.jar"/>
+	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry kind="src" path="CaptureActivity_src"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

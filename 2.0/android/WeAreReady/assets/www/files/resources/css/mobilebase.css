@@ -1,0 +1,159 @@
+body {
+    overflow: auto;
+}
+
+a {
+    outline: none;
+    color: black;
+}
+
+td {
+    vertical-align: top;
+}
+
+.ui-field-contain {
+    padding: 0;
+    border-bottom-width: 0px;
+}
+
+.ui-selectmenu {
+    z-index: 1001 !important;
+}
+
+.ui-btn.ui-btn-right:not(.ui-btn-icon-notext) {
+    text-align: right;
+}
+
+.ui-btn.ui-btn-left:not(.ui-btn-icon-notext) {
+    text-align: left;
+}
+
+.ui-mobile-viewport textarea.ui-input-text {
+    margin: 0;
+}
+
+.ui-field-contain div.ui-input-text,
+.ui-field-contain textarea.ui-input-text,
+.ui-field-contain div.ui-input-search,
+.ui-field-contain div.ui-slider:not(.ui-slider-switch),
+.ui-field-contain div.ui-select {
+    width: 100%;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ui-mobile-viewport .ui-footer .ui-body {
+    clear: none;
+}
+
+.ui-mobile-viewport .ui-header div.ui-navbar,
+.ui-mobile-viewport .ui-footer div.ui-navbar {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+/* Listview */
+
+.ui-listview > li a > h3 {
+    margin: 0;
+}
+
+.ui-listview .ui-li-has-thumb > .ui-btn > img:first-child {
+    height: 5em;
+}
+
+ol.ui-listview > li span.ui-li-count {
+    margin-top: -.88em;
+    text-indent: inherit;
+}
+
+/* ETST-17856 */
+ol.ui-listview > li > a > h3 {
+    width: 100%;
+    text-indent: 2em;
+    margin-left: -2em;
+}
+
+/* see ETST-7646 */
+@media all and (min-width: 28em) {
+    .ui-mobile-viewport .ui-field-contain .ui-controlgroup-controls {
+        display: block;
+        width: auto;
+        float: none;
+    }
+}
+
+/* ETST-7532 */
+.ui-icon.ui-icon-none {
+    background: none;
+    background-image: none;
+}
+
+.ui-icon-shadow.ui-icon-none {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.tiggzi-mobiletemplate {
+    background-color: transparent;
+    padding: 0px;
+}
+
+/* ETST-10870 */
+.ui-header > .ui-btn-left,
+.ui-header > .ui-btn-right {
+    max-width: 30%;
+}
+
+/* ETST-12129 */
+.ui-collapsible > .ui-collapsible-content {
+    border-top: 1px solid transparent;
+    margin-top: -1px;
+}
+
+/* ETST-14349 */
+.content-secondary .ui-collapsible-content ul[data-role="listview"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.content-secondary .ui-collapsible-content [data-role="listview"] .ui-li.ui-first-child {
+    border-top-width: 1px;
+}
+
+.content-secondary .ui-scrollview-view > .ui-collapsible {
+    margin-top: 0px;
+}
+
+.content-secondary .ui-collapsible .hasDatepicker {
+    width: 100%;
+}
+
+/* ETST-17778 */
+.ui-header .ui-btn {
+    display: block;
+}
+
+/* ETST-17901 */
+.ui-icon-none.ui-btn-icon-left:after,
+.ui-icon-none.ui-btn-icon-right:after,
+.ui-icon-none.ui-btn-icon-top:after,
+.ui-icon-none.ui-btn-icon-bottom:after,
+.ui-icon-none.ui-btn-icon-notext:after {
+    background-color: transparent;
+}
+
+/* ETST-17941 */
+.ui-mobile .ui-input-text, .ui-mobile .ui-input-search {
+    margin: 0;
+}
+
+/* ETST-17802 */
+div[data-role="panel"] div.hasDatepicker { 
+    width: 100%;
+}

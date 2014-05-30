@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            startScreen
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="initial-scale=1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <link href="files/resources/lib/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="files/resources/lib/theme/ios7/ios7.css" rel="stylesheet" />
+        <link href="files/resources/lib/jquerymobile/1.4.0/jquery.mobile.structure-1.4.0.css"
+        rel="stylesheet" />
+        <script type="text/javascript" src="files/resources/lib/store/json2.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquery/jquery-1.9.1.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.toLowerCase().indexOf("android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+                if (navigator.userAgent.toLowerCase().indexOf("msie") != -1)
+                {
+                    $.mobile.allowCrossDomainPages = true;
+                    $.support.cors = true;
+                }
+            });
+        </script>
+        <script type="text/javascript" src="files/resources/lib/jquerymobile/1.4.0/jquery.mobile-1.4.0.js">
+        </script>
+        <script type="text/javascript" src="files/resources/js/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/jsonpath.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/base/appery.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/get_target_platform.js">
+        </script>
+        <script type="text/javascript" src="files/resources/lib/cordova.js">
+        </script>
+        <link href="files/resources/css/mobilebase.css" rel="stylesheet" type="text/css"
+        />
+        <script type="text/javascript" src="files/views/assets/js/services/service.js">
+        </script>
+        <link href="startScreen.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="startScreen.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                if (navigator.userAgent.match(/iP/i))
+        {
+            $(window).bind('orientationchange', function(event)
+            {
+                $('meta[name="viewport"]').attr('content', 'initial-scale=1.0,maximum-scale=1.0, ' + ((window.orientation == 90 || window.orientation == -90 || window.orientation == 270) ? "height=device-width,width=device-height" : "height=device-height,width=device-width"));
+            }).trigger('orientationchange');
+        }
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="startScreen" id="startScreen"
+        class="type-interior" data-theme="b">
+            <!-- mobileheader1 -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="b" name="mobileheader1" id="startScreen_mobileheader1" class="startScreen_mobileheader1">
+                <h1 dsid="mobileheader1">
+                    We Are Ready
+                </h1>
+            </div>
+            <!-- mobilecontainer1 -->
+            <div data-role="content" id="startScreen_mobilecontainer1" name="mobilecontainer1"
+            class="startScreen_mobilecontainer1 ui-content" dsid="mobilecontainer1" data-theme="b">
+                <!-- mobilelabel_11 -->
+                <div name="mobilelabel_11" id="startScreen_mobilelabel_11" dsid="mobilelabel_11"
+                data-role="appery_label" class="startScreen_mobilelabel_11">
+                    Login
+                </div>
+                <!-- mobilegrid_2 -->
+                <div class="startScreen_mobilegrid_2_wrapper" data-wrapper-for="mobilegrid_2">
+                    <table id="startScreen_mobilegrid_2" class="startScreen_mobilegrid_2" dsid="mobilegrid_2"
+                    name="mobilegrid_2" cellpadding=0 cellspacing=0>
+                        <col style="width:30%;" />
+                        <col style="width:auto;" />
+                        <tr class="startScreen_mobilegrid_2_row_0">
+                            <!-- mobilegridcell_3 -->
+                            <td id="startScreen_mobilegridcell_3" name="mobilegridcell_3" class="startScreen_mobilegridcell_3"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- mobilelabel_7 -->
+                                    <div name="mobilelabel_7" id="startScreen_mobilelabel_7" dsid="mobilelabel_7" data-role="appery_label"
+                                    class="startScreen_mobilelabel_7">
+                                        Username
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_4 -->
+                            <td id="startScreen_mobilegridcell_4" name="mobilegridcell_4" class="startScreen_mobilegridcell_4"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- txtUserName -->
+                                    <div data-role="fieldcontain" class="startScreen_txtUserName ">
+                                        <input type="text" name="txtUserName" dsid="txtUserName" value="" placeholder="Username"
+                                        id="startScreen_txtUserName" tabindex="1" multiple data-theme="b" class="startScreen_txtUserName"
+                                        />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="startScreen_mobilegrid_2_row_1">
+                            <!-- mobilegridcell_5 -->
+                            <td id="startScreen_mobilegridcell_5" name="mobilegridcell_5" class="startScreen_mobilegridcell_5"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- mobilelabel_8 -->
+                                    <div name="mobilelabel_8" id="startScreen_mobilelabel_8" dsid="mobilelabel_8" data-role="appery_label"
+                                    class="startScreen_mobilelabel_8">
+                                        Password
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_6 -->
+                            <td id="startScreen_mobilegridcell_6" name="mobilegridcell_6" class="startScreen_mobilegridcell_6"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- txtPassword -->
+                                    <div data-role="fieldcontain" class="startScreen_txtPassword ">
+                                        <input type="password" name="txtPassword" dsid="txtPassword" value="" placeholder="Password"
+                                        id="startScreen_txtPassword" tabindex="2" multiple data-theme="b" class="startScreen_txtPassword"
+                                        />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="startScreen_mobilegrid_2_row_2">
+                            <!-- mobilegridcell_12 -->
+                            <td id="startScreen_mobilegridcell_12" name="mobilegridcell_12" class="startScreen_mobilegridcell_12"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_13 -->
+                            <td id="startScreen_mobilegridcell_13" name="mobilegridcell_13" class="startScreen_mobilegridcell_13"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- btnLogin -->
+                                    <a data-role="button" name="btnLogin" dsid="btnLogin" class="startScreen_btnLogin"
+                                    id="startScreen_btnLogin" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                                    data-inline="true" data-mini="false" data-theme="b" tabindex="3">
+                                    Login
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- mobilefooter1 -->
+            <div data-role="footer" data-position="fixed" class="startScreen_mobilefooter1"
+            name="mobilefooter1" dsid="mobilefooter1" id="startScreen_mobilefooter1" data-theme="b">
+            </div>
+        </div>
+        <div data-role="page" style="min-height:480px;" dsid="scanScreen" id="scanScreen"
+        class="type-interior" data-theme="e">
+            <!-- mobileheader -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="e" name="mobileheader" id="scanScreen_mobileheader" class="scanScreen_mobileheader">
+                <h1 dsid="mobileheader">
+                    WeAreReady
+                </h1>
+                <!-- mobilebutton_150 -->
+                <a data-role="button" name="mobilebutton_150" dsid="mobilebutton_150" class="scanScreen_mobilebutton_150 ui-btn-right"
+                style='min-height:16px; ' id="scanScreen_mobilebutton_150" data-corners="true" data-icon="delete"
+                data-iconpos="left" data-inline='true' data-mini='true' data-theme="e" tabindex="33">
+                &nbsp;
+                </a>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="scanScreen_mobilecontainer" name="mobilecontainer"
+            class="scanScreen_mobilecontainer ui-content" dsid="mobilecontainer" data-theme="e">
+                <!-- mobilecollapsibleset_142 -->
+                <div data-role="collapsible-set" data-theme="e" data-content-theme=e data-collapsed-icon='arrow-d'
+                data-expanded-icon='arrow-u' name="mobilecollapsibleset_142" id="scanScreen_mobilecollapsibleset_142"
+                dsid="mobilecollapsibleset_142" class="scanScreen_mobilecollapsibleset_142">
+                    <!-- mobilecollapsblock_143 -->
+                    <div data-role="collapsible" id="scanScreen_mobilecollapsblock_143" name="mobilecollapsblock_143"
+                    dsid="mobilecollapsblock_143" data-collapsed="true" data-theme="e" data-content-theme="e"
+                    data-iconpos='left' class="scanScreen_mobilecollapsblock_143" reRender='mobilecollapsibleset_142'>
+                        <h3 id="scanScreen_settingsBl" name="settingsBl" dsid="settingsBl">
+                            Settings
+                        </h3>
+                        <!-- mobilelabel_21 -->
+                        <div name="mobilelabel_21" id="scanScreen_mobilelabel_21" dsid="mobilelabel_21"
+                        data-role="appery_label" class="scanScreen_mobilelabel_21">
+                            Choose Checkpoint
+                        </div>
+                        <!-- cmdCheckPoint -->
+                        <div data-role="fieldcontain" class="scanScreen_cmdCheckPoint ">
+                            <select name="cmdCheckPoint" id="scanScreen_cmdCheckPoint" dsid="cmdCheckPoint"
+                            data-theme="e" data-inline="false" data-mini="true" data-icon="arrow-d" data-iconpos="right"
+                            data-native-menu="true" tabindex="3" appery-class="scanScreen_cmdCheckPoint">
+                                <option id="scanScreen_cmdCheckPoint-0" value="" reRender="cmdCheckPoint" dsid="cmdCheckPoint-0">
+                                </option>
+                            </select>
+                        </div>
+                        <!-- lblChooseAction -->
+                        <div name="lblChooseAction" id="scanScreen_lblChooseAction" dsid="lblChooseAction"
+                        data-role="appery_label" class="scanScreen_lblChooseAction">
+                            Choose Action
+                        </div>
+                        <!-- cmdRegAction -->
+                        <div data-role="fieldcontain" class="scanScreen_cmdRegAction ">
+                            <select name="cmdRegAction" id="scanScreen_cmdRegAction" dsid="cmdRegAction" data-theme="e"
+                            data-inline="false" data-mini="true" data-icon="arrow-d" data-iconpos="right" data-native-menu="true"
+                            tabindex="4" appery-class="scanScreen_cmdRegAction">
+                                <option id="scanScreen_cmdRegAction-0" value="1" reRender="cmdRegAction" dsid="cmdRegAction-0"
+                                selected="selected">
+                                    Register New Users
+                                </option>
+                            </select>
+                        </div>
+                        <!-- cmbPassActions -->
+                        <div data-role="fieldcontain" class="scanScreen_cmbPassActions ">
+                            <select name="cmbPassActions" id="scanScreen_cmbPassActions" dsid="cmbPassActions"
+                            data-theme="e" data-inline="false" data-mini="true" data-icon="arrow-d" data-iconpos="right"
+                            data-native-menu="true" tabindex="25" appery-class="scanScreen_cmbPassActions">
+                                <option id="scanScreen_cmbPassActions-0" value="Check in" reRender="cmbPassActions"
+                                dsid="cmbPassActions-0" selected="selected">
+                                    Check in
+                                </option>
+                                <option id="scanScreen_cmbPassActions-1" value="Check out" reRender="cmbPassActions"
+                                dsid="cmbPassActions-1">
+                                    Check out
+                                </option>
+                                <option id="scanScreen_cmbPassActions-2" value="Reclaim tags" reRender="cmbPassActions"
+                                dsid="cmbPassActions-2">
+                                    Reclaim tags
+                                </option>
+                            </select>
+                        </div>
+                        <!-- cmbAmbulanceActions -->
+                        <div data-role="fieldcontain" class="scanScreen_cmbAmbulanceActions ">
+                            <select name="cmbAmbulanceActions" id="scanScreen_cmbAmbulanceActions" dsid="cmbAmbulanceActions"
+                            data-theme="e" data-inline="false" data-mini="true" data-icon="arrow-d" data-iconpos="right"
+                            data-native-menu="true" tabindex="30" appery-class="scanScreen_cmbAmbulanceActions">
+                                <option id="scanScreen_cmbAmbulanceActions-0" value="In Ambulance" reRender="cmbAmbulanceActions"
+                                dsid="cmbAmbulanceActions-0" selected="selected">
+                                    In Ambulance
+                                </option>
+                                <option id="scanScreen_cmbAmbulanceActions-1" value="Airlifted" reRender="cmbAmbulanceActions"
+                                dsid="cmbAmbulanceActions-1">
+                                    Airlifted
+                                </option>
+                            </select>
+                        </div>
+                        <!-- btnSaveSettings -->
+                        <a data-role="button" name="btnSaveSettings" dsid="btnSaveSettings" class="scanScreen_btnSaveSettings"
+                        id="scanScreen_btnSaveSettings" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                        data-mini="true" data-theme="e" tabindex="5">
+                        Save Settings
+                        </a>
+                    </div>
+                    <!-- mobilecollapsblock_146 -->
+                    <div data-role="collapsible" id="scanScreen_mobilecollapsblock_146" name="mobilecollapsblock_146"
+                    dsid="mobilecollapsblock_146" data-collapsed="false" data-theme="e" data-content-theme="e"
+                    data-iconpos='left' class="scanScreen_mobilecollapsblock_146" reRender='mobilecollapsibleset_142'>
+                        <h3 id="scanScreen_scanBlock" name="scanBlock" dsid="scanBlock">
+                            Scan
+                        </h3>
+                        <!-- btnScanTag -->
+                        <a data-role="button" name="btnScanTag" dsid="btnScanTag" class="scanScreen_btnScanTag"
+                        id="scanScreen_btnScanTag" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                        data-mini="false" data-theme="e" tabindex="6">
+                        Scan
+                        </a>
+                        <!-- txtNFCTag -->
+                        <div name="txtNFCTag" id="scanScreen_txtNFCTag" dsid="txtNFCTag" data-role="appery_label"
+                        class="scanScreen_txtNFCTag">
+                            Tag : 045f3f62b72080
+                        </div>
+                        <!-- scanStatus -->
+                        <div name="scanStatus" id="scanScreen_scanStatus" dsid="scanStatus" data-role="appery_label"
+                        class="scanScreen_scanStatus">
+                        </div>
+                        <!-- lblChooseStatus -->
+                        <div name="lblChooseStatus" id="scanScreen_lblChooseStatus" dsid="lblChooseStatus"
+                        data-role="appery_label" class="scanScreen_lblChooseStatus">
+                            Choose Status
+                        </div>
+                        <!-- cmbRescueActions -->
+                        <div data-role="fieldcontain" class="scanScreen_cmbRescueActions ">
+                            <select name="cmbRescueActions" id="scanScreen_cmbRescueActions" dsid="cmbRescueActions"
+                            data-theme="e" data-inline="false" data-mini="true" data-icon="arrow-d" data-iconpos="right"
+                            data-native-menu="true" tabindex="26" appery-class="scanScreen_cmbRescueActions">
+                                <option id="scanScreen_cmbRescueActions-0" value="Found Healthy" reRender="cmbRescueActions"
+                                dsid="cmbRescueActions-0" selected="selected">
+                                    Found Healthy
+                                </option>
+                                <option id="scanScreen_cmbRescueActions-1" value="Found Healthy with Bruises" reRender="cmbRescueActions"
+                                dsid="cmbRescueActions-1">
+                                    Found Healthy with Bruises
+                                </option>
+                                <option id="scanScreen_cmbRescueActions-2" value="Found Injured" reRender="cmbRescueActions"
+                                dsid="cmbRescueActions-2">
+                                    Found Injured
+                                </option>
+                                <option id="scanScreen_cmbRescueActions-3" value="Found Critially Injured" reRender="cmbRescueActions"
+                                dsid="cmbRescueActions-3">
+                                    Found Critially Injured
+                                </option>
+                                <option id="scanScreen_cmbRescueActions-4" value="Found Dead" reRender="cmbRescueActions"
+                                dsid="cmbRescueActions-4">
+                                    Found Dead
+                                </option>
+                            </select>
+                        </div>
+                        <!-- cmbDoctorActions -->
+                        <div data-role="fieldcontain" class="scanScreen_cmbDoctorActions ">
+                            <select name="cmbDoctorActions" id="scanScreen_cmbDoctorActions" dsid="cmbDoctorActions"
+                            data-theme="e" data-inline="false" data-mini="true" data-icon="arrow-d" data-iconpos="right"
+                            data-native-menu="true" tabindex="28" appery-class="scanScreen_cmbDoctorActions">
+                                <option id="scanScreen_cmbDoctorActions-0" value="Arrived at Hospital" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-0" selected="selected">
+                                    Arrived at Hospital
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-1" value="Admitted to Hospital" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-1">
+                                    Admitted to Hospital
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-2" value="Recovering" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-2">
+                                    Recovering
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-3" value="Ready to Discharge" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-3">
+                                    Ready to Discharge
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-4" value="Discharged from Hospital" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-4">
+                                    Discharged from Hospital
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-5" value="In Critial Condition" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-5">
+                                    In Critial Condition
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-6" value="In Coma" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-6">
+                                    In Coma
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-7" value="Deceased" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-7">
+                                    Deceased
+                                </option>
+                                <option id="scanScreen_cmbDoctorActions-8" value="Dead on Arrial" reRender="cmbDoctorActions"
+                                dsid="cmbDoctorActions-8">
+                                    Dead on Arrival
+                                </option>
+                            </select>
+                        </div>
+                        <!-- lessInfoGrid -->
+                        <div class="scanScreen_lessInfoGrid_wrapper" data-wrapper-for="lessInfoGrid">
+                            <table id="scanScreen_lessInfoGrid" class="scanScreen_lessInfoGrid" dsid="lessInfoGrid"
+                            name="lessInfoGrid" cellpadding=0 cellspacing=0>
+                                <col style="width:40%;" />
+                                <col style="width:auto;" />
+                                <tr class="scanScreen_lessInfoGrid_row_0">
+                                    <!-- mobilegridcell_85 -->
+                                    <td id="scanScreen_mobilegridcell_85" name="mobilegridcell_85" class="scanScreen_mobilegridcell_85"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_89 -->
+                                            <div name="mobilelabel_89" id="scanScreen_mobilelabel_89" dsid="mobilelabel_89"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_89">
+                                                First Name
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_86 -->
+                                    <td id="scanScreen_mobilegridcell_86" name="mobilegridcell_86" class="scanScreen_mobilegridcell_86"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblFirstName -->
+                                            <div name="lblFirstName" id="scanScreen_lblFirstName" dsid="lblFirstName" data-role="appery_label"
+                                            class="scanScreen_lblFirstName">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_1">
+                                    <!-- mobilegridcell_87 -->
+                                    <td id="scanScreen_mobilegridcell_87" name="mobilegridcell_87" class="scanScreen_mobilegridcell_87"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_90 -->
+                                            <div name="mobilelabel_90" id="scanScreen_mobilelabel_90" dsid="mobilelabel_90"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_90">
+                                                Last Name
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_88 -->
+                                    <td id="scanScreen_mobilegridcell_88" name="mobilegridcell_88" class="scanScreen_mobilegridcell_88"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblLastName -->
+                                            <div name="lblLastName" id="scanScreen_lblLastName" dsid="lblLastName" data-role="appery_label"
+                                            class="scanScreen_lblLastName">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_2">
+                                    <!-- mobilegridcell_91 -->
+                                    <td id="scanScreen_mobilegridcell_91" name="mobilegridcell_91" class="scanScreen_mobilegridcell_91"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_99 -->
+                                            <div name="mobilelabel_99" id="scanScreen_mobilelabel_99" dsid="mobilelabel_99"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_99">
+                                                Gender
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_92 -->
+                                    <td id="scanScreen_mobilegridcell_92" name="mobilegridcell_92" class="scanScreen_mobilegridcell_92"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblGender -->
+                                            <div name="lblGender" id="scanScreen_lblGender" dsid="lblGender" data-role="appery_label"
+                                            class="scanScreen_lblGender">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_3">
+                                    <!-- mobilegridcell_93 -->
+                                    <td id="scanScreen_mobilegridcell_93" name="mobilegridcell_93" class="scanScreen_mobilegridcell_93"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_98 -->
+                                            <div name="mobilelabel_98" id="scanScreen_mobilelabel_98" dsid="mobilelabel_98"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_98">
+                                                Age
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_94 -->
+                                    <td id="scanScreen_mobilegridcell_94" name="mobilegridcell_94" class="scanScreen_mobilegridcell_94"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblAge -->
+                                            <div name="lblAge" id="scanScreen_lblAge" dsid="lblAge" data-role="appery_label"
+                                            class="scanScreen_lblAge">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_4">
+                                    <!-- mobilegridcell_95 -->
+                                    <td id="scanScreen_mobilegridcell_95" name="mobilegridcell_95" class="scanScreen_mobilegridcell_95"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_97 -->
+                                            <div name="mobilelabel_97" id="scanScreen_mobilelabel_97" dsid="mobilelabel_97"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_97">
+                                                Blood Group
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_96 -->
+                                    <td id="scanScreen_mobilegridcell_96" name="mobilegridcell_96" class="scanScreen_mobilegridcell_96"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblBloodGroup -->
+                                            <div name="lblBloodGroup" id="scanScreen_lblBloodGroup" dsid="lblBloodGroup" data-role="appery_label"
+                                            class="scanScreen_lblBloodGroup">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_5">
+                                    <!-- mobilegridcell_100 -->
+                                    <td id="scanScreen_mobilegridcell_100" name="mobilegridcell_100" class="scanScreen_mobilegridcell_100"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_104 -->
+                                            <div name="mobilelabel_104" id="scanScreen_mobilelabel_104" dsid="mobilelabel_104"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_104">
+                                                Group Count
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_101 -->
+                                    <td id="scanScreen_mobilegridcell_101" name="mobilegridcell_101" class="scanScreen_mobilegridcell_101"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblGroupCount -->
+                                            <div name="lblGroupCount" id="scanScreen_lblGroupCount" dsid="lblGroupCount" data-role="appery_label"
+                                            class="scanScreen_lblGroupCount">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_6">
+                                    <!-- mobilegridcell_102 -->
+                                    <td id="scanScreen_mobilegridcell_102" name="mobilegridcell_102" class="scanScreen_mobilegridcell_102"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_110 -->
+                                            <div name="mobilelabel_110" id="scanScreen_mobilelabel_110" dsid="mobilelabel_110"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_110">
+                                                Emergency Contact
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_103 -->
+                                    <td id="scanScreen_mobilegridcell_103" name="mobilegridcell_103" class="scanScreen_mobilegridcell_103"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblEmergencyContact -->
+                                            <div name="lblEmergencyContact" id="scanScreen_lblEmergencyContact" dsid="lblEmergencyContact"
+                                            data-role="appery_label" class="scanScreen_lblEmergencyContact">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_7">
+                                    <!-- mobilegridcell_111 -->
+                                    <td id="scanScreen_mobilegridcell_111" name="mobilegridcell_111" class="scanScreen_mobilegridcell_111"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_113 -->
+                                            <div name="mobilelabel_113" id="scanScreen_mobilelabel_113" dsid="mobilelabel_113"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_113">
+                                                Emergency Contact Number
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_112 -->
+                                    <td id="scanScreen_mobilegridcell_112" name="mobilegridcell_112" class="scanScreen_mobilegridcell_112"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblEmergencyContactNumber -->
+                                            <div name="lblEmergencyContactNumber" id="scanScreen_lblEmergencyContactNumber"
+                                            dsid="lblEmergencyContactNumber" data-role="appery_label" class="scanScreen_lblEmergencyContactNumber">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_lessInfoGrid_row_8">
+                                    <!-- mobilegridcell_126 -->
+                                    <td id="scanScreen_mobilegridcell_126" name="mobilegridcell_126" class="scanScreen_mobilegridcell_126"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_128 -->
+                                            <div name="mobilelabel_128" id="scanScreen_mobilelabel_128" dsid="mobilelabel_128"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_128">
+                                                Medical Conditions
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_127 -->
+                                    <td id="scanScreen_mobilegridcell_127" name="mobilegridcell_127" class="scanScreen_mobilegridcell_127"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- lblMedicalConditon -->
+                                            <div name="lblMedicalConditon" id="scanScreen_lblMedicalConditon" dsid="lblMedicalConditon"
+                                            data-role="appery_label" class="scanScreen_lblMedicalConditon">
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- btnSaveStatus -->
+                        <a data-role="button" name="btnSaveStatus" dsid="btnSaveStatus" class="scanScreen_btnSaveStatus"
+                        id="scanScreen_btnSaveStatus" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                        data-mini="false" data-theme="e" tabindex="29">
+                        Update Status
+                        </a>
+                        <!-- registerGrid -->
+                        <div class="scanScreen_registerGrid_wrapper" data-wrapper-for="registerGrid">
+                            <table id="scanScreen_registerGrid" class="scanScreen_registerGrid" dsid="registerGrid"
+                            name="registerGrid" cellpadding=0 cellspacing=0>
+                                <col style="width:40%;" />
+                                <col style="width:auto;" />
+                                <tr class="scanScreen_registerGrid_row_0">
+                                    <!-- mobilegridcell_30 -->
+                                    <td id="scanScreen_mobilegridcell_30" name="mobilegridcell_30" class="scanScreen_mobilegridcell_30"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_35 -->
+                                            <div name="mobilelabel_35" id="scanScreen_mobilelabel_35" dsid="mobilelabel_35"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_35">
+                                                First Name
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_31 -->
+                                    <td id="scanScreen_mobilegridcell_31" name="mobilegridcell_31" class="scanScreen_mobilegridcell_31"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- txtFirstName -->
+                                            <div data-role="fieldcontain" class="scanScreen_txtFirstName ">
+                                                <input type="text" name="txtFirstName" dsid="txtFirstName" value="" placeholder=""
+                                                id="scanScreen_txtFirstName" tabindex="8" multiple data-theme="e" class="scanScreen_txtFirstName"
+                                                />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_1">
+                                    <!-- mobilegridcell_32 -->
+                                    <td id="scanScreen_mobilegridcell_32" name="mobilegridcell_32" class="scanScreen_mobilegridcell_32"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_36 -->
+                                            <div name="mobilelabel_36" id="scanScreen_mobilelabel_36" dsid="mobilelabel_36"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_36">
+                                                Last Name
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_33 -->
+                                    <td id="scanScreen_mobilegridcell_33" name="mobilegridcell_33" class="scanScreen_mobilegridcell_33"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- txtLastName -->
+                                            <div data-role="fieldcontain" class="scanScreen_txtLastName ">
+                                                <input type="text" name="txtLastName" dsid="txtLastName" value="" placeholder=""
+                                                id="scanScreen_txtLastName" tabindex="9" multiple data-theme="e" class="scanScreen_txtLastName"
+                                                />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_2">
+                                    <!-- mobilegridcell_40 -->
+                                    <td id="scanScreen_mobilegridcell_40" name="mobilegridcell_40" class="scanScreen_mobilegridcell_40"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_58 -->
+                                            <div name="mobilelabel_58" id="scanScreen_mobilelabel_58" dsid="mobilelabel_58"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_58">
+                                                Gender
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_41 -->
+                                    <td id="scanScreen_mobilegridcell_41" name="mobilegridcell_41" class="scanScreen_mobilegridcell_41"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- cmbGender -->
+                                            <div data-role="fieldcontain" class="scanScreen_cmbGender ">
+                                                <select name="cmbGender" id="scanScreen_cmbGender" dsid="cmbGender" data-theme="e"
+                                                data-inline="false" data-mini="false" data-icon="arrow-d" data-iconpos="right" data-native-menu="false"
+                                                tabindex="13" appery-class="scanScreen_cmbGender">
+                                                    <option id="scanScreen_cmbGender-0" value="Male" reRender="cmbGender" dsid="cmbGender-0"
+                                                    selected="selected">
+                                                        Male
+                                                    </option>
+                                                    <option id="scanScreen_cmbGender-1" value="Female" reRender="cmbGender" dsid="cmbGender-1">
+                                                        Female
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_3">
+                                    <!-- mobilegridcell_42 -->
+                                    <td id="scanScreen_mobilegridcell_42" name="mobilegridcell_42" class="scanScreen_mobilegridcell_42"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_63 -->
+                                            <div name="mobilelabel_63" id="scanScreen_mobilelabel_63" dsid="mobilelabel_63"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_63">
+                                                Age
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_43 -->
+                                    <td id="scanScreen_mobilegridcell_43" name="mobilegridcell_43" class="scanScreen_mobilegridcell_43"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- txtAge -->
+                                            <div data-role="fieldcontain" class="scanScreen_txtAge ">
+                                                <input type="number" name="txtAge" dsid="txtAge" value="Input" placeholder="" id="scanScreen_txtAge"
+                                                tabindex="14" multiple data-theme="e" class="scanScreen_txtAge" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_4">
+                                    <!-- mobilegridcell_44 -->
+                                    <td id="scanScreen_mobilegridcell_44" name="mobilegridcell_44" class="scanScreen_mobilegridcell_44"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_64 -->
+                                            <div name="mobilelabel_64" id="scanScreen_mobilelabel_64" dsid="mobilelabel_64"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_64">
+                                                Blood Group
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_45 -->
+                                    <td id="scanScreen_mobilegridcell_45" name="mobilegridcell_45" class="scanScreen_mobilegridcell_45"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- cmbBloodGroup -->
+                                            <div data-role="fieldcontain" class="scanScreen_cmbBloodGroup ">
+                                                <select name="cmbBloodGroup" id="scanScreen_cmbBloodGroup" dsid="cmbBloodGroup"
+                                                data-theme="e" data-inline="false" data-mini="false" data-icon="arrow-d" data-iconpos="right"
+                                                data-native-menu="false" tabindex="15" appery-class="scanScreen_cmbBloodGroup">
+                                                    <option id="scanScreen_cmbBloodGroup-0" value="1" reRender="cmbBloodGroup" dsid="cmbBloodGroup-0"
+                                                    selected="selected">
+                                                        A+
+                                                    </option>
+                                                    <option id="scanScreen_cmbBloodGroup-1" value="2" reRender="cmbBloodGroup" dsid="cmbBloodGroup-1">
+                                                        A-
+                                                    </option>
+                                                    <option id="scanScreen_cmbBloodGroup-2" value="3" reRender="cmbBloodGroup" dsid="cmbBloodGroup-2">
+                                                        B+
+                                                    </option>
+                                                    <option id="scanScreen_cmbBloodGroup-3" value="4" reRender="cmbBloodGroup" dsid="cmbBloodGroup-3">
+                                                        B-
+                                                    </option>
+                                                    <option id="scanScreen_cmbBloodGroup-4" value="5" reRender="cmbBloodGroup" dsid="cmbBloodGroup-4">
+                                                        O+
+                                                    </option>
+                                                    <option id="scanScreen_cmbBloodGroup-5" value="6" reRender="cmbBloodGroup" dsid="cmbBloodGroup-5">
+                                                        O-
+                                                    </option>
+                                                    <option id="scanScreen_cmbBloodGroup-6" value="7" reRender="cmbBloodGroup" dsid="cmbBloodGroup-6">
+                                                        AB+
+                                                    </option>
+                                                    <option id="scanScreen_cmbBloodGroup-7" value="8" reRender="cmbBloodGroup" dsid="cmbBloodGroup-7">
+                                                        AB-
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_5">
+                                    <!-- mobilegridcell_46 -->
+                                    <td id="scanScreen_mobilegridcell_46" name="mobilegridcell_46" class="scanScreen_mobilegridcell_46"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_67 -->
+                                            <div name="mobilelabel_67" id="scanScreen_mobilelabel_67" dsid="mobilelabel_67"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_67">
+                                                Phone
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_47 -->
+                                    <td id="scanScreen_mobilegridcell_47" name="mobilegridcell_47" class="scanScreen_mobilegridcell_47"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- txtPhonenumber -->
+                                            <div data-role="fieldcontain" class="scanScreen_txtPhonenumber ">
+                                                <input type="tel" name="txtPhonenumber" dsid="txtPhonenumber" value="" placeholder=""
+                                                id="scanScreen_txtPhonenumber" tabindex="16" multiple data-theme="e" class="scanScreen_txtPhonenumber"
+                                                />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_6">
+                                    <!-- mobilegridcell_48 -->
+                                    <td id="scanScreen_mobilegridcell_48" name="mobilegridcell_48" class="scanScreen_mobilegridcell_48"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_69 -->
+                                            <div name="mobilelabel_69" id="scanScreen_mobilelabel_69" dsid="mobilelabel_69"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_69">
+                                                Group Count
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_49 -->
+                                    <td id="scanScreen_mobilegridcell_49" name="mobilegridcell_49" class="scanScreen_mobilegridcell_49"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- groupCount -->
+                                            <div data-role="fieldcontain" class="scanScreen_groupCount ">
+                                                <input type="number" name="groupCount" dsid="groupCount" value="1" placeholder=""
+                                                id="scanScreen_groupCount" tabindex="17" multiple data-theme="e" class="scanScreen_groupCount"
+                                                />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_7">
+                                    <!-- mobilegridcell_50 -->
+                                    <td id="scanScreen_mobilegridcell_50" name="mobilegridcell_50" class="scanScreen_mobilegridcell_50"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_71 -->
+                                            <div name="mobilelabel_71" id="scanScreen_mobilelabel_71" dsid="mobilelabel_71"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_71">
+                                                Emergency Contact
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_51 -->
+                                    <td id="scanScreen_mobilegridcell_51" name="mobilegridcell_51" class="scanScreen_mobilegridcell_51"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- txtEmergencyContact -->
+                                            <div data-role="fieldcontain" class="scanScreen_txtEmergencyContact ">
+                                                <input type="text" name="txtEmergencyContact" dsid="txtEmergencyContact" value=""
+                                                placeholder="" id="scanScreen_txtEmergencyContact" tabindex="18" multiple data-theme="e"
+                                                class="scanScreen_txtEmergencyContact" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_8">
+                                    <!-- mobilegridcell_52 -->
+                                    <td id="scanScreen_mobilegridcell_52" name="mobilegridcell_52" class="scanScreen_mobilegridcell_52"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_73 -->
+                                            <div name="mobilelabel_73" id="scanScreen_mobilelabel_73" dsid="mobilelabel_73"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_73">
+                                                Emergency Contact Number
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_53 -->
+                                    <td id="scanScreen_mobilegridcell_53" name="mobilegridcell_53" class="scanScreen_mobilegridcell_53"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- txtEmergencyContactNumber -->
+                                            <div data-role="fieldcontain" class="scanScreen_txtEmergencyContactNumber ">
+                                                <input type="tel" name="txtEmergencyContactNumber" dsid="txtEmergencyContactNumber"
+                                                value="" placeholder="" id="scanScreen_txtEmergencyContactNumber" tabindex="19" multiple
+                                                data-theme="e" class="scanScreen_txtEmergencyContactNumber" />
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_9">
+                                    <!-- mobilegridcell_54 -->
+                                    <td id="scanScreen_mobilegridcell_54" name="mobilegridcell_54" class="scanScreen_mobilegridcell_54"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_76 -->
+                                            <div name="mobilelabel_76" id="scanScreen_mobilelabel_76" dsid="mobilelabel_76"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_76">
+                                                SMS Pack Purchased
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_55 -->
+                                    <td id="scanScreen_mobilegridcell_55" name="mobilegridcell_55" class="scanScreen_mobilegridcell_55"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- SMSPackage -->
+                                            <div data-role="fieldcontain" class="scanScreen_SMSPackage ">
+                                                <select data-role="flipswitch" name="SMSPackage" id="scanScreen_SMSPackage" dsid="SMSPackage"
+                                                data-theme="e" data-track-theme="e">
+                                                    <option value="off">
+                                                        No
+                                                    </option>
+                                                    <option value="on">
+                                                        Yes
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="scanScreen_registerGrid_row_10">
+                                    <!-- mobilegridcell_81 -->
+                                    <td id="scanScreen_mobilegridcell_81" name="mobilegridcell_81" class="scanScreen_mobilegridcell_81"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_125 -->
+                                            <div name="mobilelabel_125" id="scanScreen_mobilelabel_125" dsid="mobilelabel_125"
+                                            data-role="appery_label" class="scanScreen_mobilelabel_125">
+                                                Medical Condition
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <!-- mobilegridcell_82 -->
+                                    <td id="scanScreen_mobilegridcell_82" name="mobilegridcell_82" class="scanScreen_mobilegridcell_82"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- txaMedicalCondition -->
+                                            <div data-role="fieldcontain" class="scanScreen_txaMedicalCondition ">
+                                                <textarea name="txaMedicalCondition" id="scanScreen_txaMedicalCondition" tabindex="23"
+                                                dsid="txaMedicalCondition" data-theme="e" placeholder="" class="scanScreen_txaMedicalCondition">
+</textarea>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- btnSaveUser -->
+                        <a data-role="button" name="btnSaveUser" dsid="btnSaveUser" class="scanScreen_btnSaveUser"
+                        id="scanScreen_btnSaveUser" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                        data-mini="false" data-theme="e" tabindex="32">
+                        Save
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- mobilefooter -->
+            <div data-role="footer" data-position="fixed" class="scanScreen_mobilefooter" name="mobilefooter"
+            dsid="mobilefooter" id="scanScreen_mobilefooter" data-theme="e">
+            </div>
+        </div>
+        <div data-role="page" style="min-height:480px;" dsid="infoScreen" id="infoScreen"
+        class="type-interior" data-theme="e">
+            <!-- mobileheader -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="e" name="mobileheader" id="infoScreen_mobileheader" class="infoScreen_mobileheader">
+                <h1 dsid="mobileheader">
+                    Caption
+                </h1>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="infoScreen_mobilecontainer" name="mobilecontainer"
+            class="infoScreen_mobilecontainer ui-content" dsid="mobilecontainer" data-theme="e">
+                <!-- mobilelabel_1 -->
+                <div name="mobilelabel_1" id="infoScreen_mobilelabel_1" dsid="mobilelabel_1" data-role="appery_label"
+                class="infoScreen_mobilelabel_1">
+                    Air Ambulance 09540161344, 09845446634, 09645744117 airambulance@airambulanceaviation.com
+                    Max Super Speciality Hospital, Dehradun +911356673000, +917895900718 CMI Hospital
+                    +911352720238, +919837027766 Himalyan Institute Hospital Trust University +911352471150,
+                    +911352471155 Citi Hospital +911352627044
+                </div>
+            </div>
+            <!-- mobilefooter -->
+            <div data-role="footer" data-position="fixed" class="infoScreen_mobilefooter" name="mobilefooter"
+            dsid="mobilefooter" id="infoScreen_mobilefooter" data-theme="e">
+            </div>
+        </div>
+    </body>
+
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeAreReady</string>
+    <string name="gcm_message">From GCM: you got message!</string>
+    <string name="gcm_deleted">From GCM: server deleted %1$d pending messages!</string>
+</resources>
